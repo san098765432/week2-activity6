@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+header {
+  padding: 40px;
+  text-align: center;
+  background: #13293d;
+  color: #fff;
+}
+
+/* 
+What happens when we set the display property to flex? 
+TODO: Write your answer here:
+1) the nav element: a flex-box has been created
+ this will mean the nav element is now a flex-container. Everything within the flex-container is referred to as a flex-item.
+2) adding the display property of flex creates a flex-box. This enables you to create rows/columns. You can add a 'wrap' effect 
+to prevent images/text from overflowing off the page or across it. Instead, they will now wrap around underneath, thigns dont go off the page.
+3) flex-box must include the following: display to create the flex-box container, justify-content for alignment, wrap and 
+also flex-direction. 
+*/
+
+nav {
+  display: flex;
+  background-color: #d8a47f;
+}
+
+nav a {
+  color: #13293d;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* 
+What is the flex-wrap property? 
+TODO: Write your answer here 
+
+1) flex-wrap allows you to force all flex-items within the flex-container to 
+wrap around and not go off the page.
+2) Targeting the main: this is now a flex-box container.
+3)Meaning, everything WITHIN the main is now a flex-box item e.g. the 'aside' and 'div'
+have become flex-items.
+4) flex-wrap- wraps all content which overflows within the flex-container. so when there
+isnt enough space for the images they wrap around and move underneath.
+5) e.g. when there isnt enough space for everything within the div flex-box, everything will
+move underneath everything else so its all stacked on top of each other.*/
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+aside {
+  flex: 1;
+  background-color: #b9c6ae;
+  padding: 80px;
+  text-align: center;
+}
+
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #13293d;
+  color: #fff;
+}
+
+/* 
+What does the justify-content property do? 
+TODO: Write your answer here 
+1) the flex-box direction is ROW therefore justify-content-> align
+content along the x axis/main axis
+*/
+.products {
+  flex: 4;
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* 
+What is the flex property a shorthand property for?
+What is it doing here? 
+TODO: Write your answer here 
+1) flex: flex-grow, flex-shrink, flex-basis
+in .card flex: 0 0 400px -> the flex-grow is 0, flex-shrink is 0 and 
+flex-basis is 400px meaning the image size has been set to 400px, it will always remain
+that size.
+
+
+*/
+.card {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  padding: 10px;
+  flex: 0 0 400px;
+}
+
+.card header {
+  padding: 20px;
+}
+
+.card p {
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+}
+
+/* 
+What does the flex-direction property define?
+What is it doing here? 
+TODO: Write your answer here 
+1)flex-direction determines whether the flex-box will be arranged into rows or columns.
+2)the default setting is row
+3)you can change this by setting the flex-direction to column
+*/
+@media screen and (max-width: 768px) {
+  main,
+  nav {
+    flex-direction: column;
+  }
+}
